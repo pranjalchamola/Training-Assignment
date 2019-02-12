@@ -1,0 +1,75 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>
+            My Form
+        </title>
+    </head>
+    <body>
+        <img src="Kellton.jpg" alt="Kellton Tech" </img>
+        <a href="Home">Home </a> &nbsp; &nbsp; &nbsp;|
+        <a href="Product">Product</a> &nbsp; &nbsp; &nbsp;|
+        <a href="company">Company</a> &nbsp; &nbsp; &nbsp;|
+        <a href="Blog">Blog</a> &nbsp; &nbsp; &nbsp;
+        
+            <input class="searchbar" type="text" placeholder="Search.." name="search2">
+            
+       
+        <form>
+        <h1 align="center">Online Registration </h1>
+        <p>Welcome to the Kellton online press room, your resource for the latest news and information on the world's largest annual water quality event. </p>    
+        <p class="signature">Title </p> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <select id="cmbInitial" name="initial" onchange="showUser(this.value)">
+            <option value="0">Mr.</option>
+            <option value="1">Mrs.</option>
+            <option value="2">Ms.</option>
+            <option value="3">M/s</option>
+        </select> <br><br>
+        <label>First name:</label>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="text" name="firstname">
+        <br><br>
+        <label>Last name:</label>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="text" name="lastname"> <br><br>
+        <label>DOB</label> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="date" name="DOB"><br><br>
+        <label class=textAlign>Full Address:</label> &nbsp; &nbsp;
+        <textarea name="message" style="width:150px; height:50px;"></textarea>
+        <br><br>
+        <label class=textAlign>Items Want: </label>&nbsp; &nbsp; &nbsp;
+        <textarea rows="4" columns="2" placeholder="Item 1              Item 2              Item 3"></textarea><br><br>
+        <label>Choose Any:</label> &nbsp; &nbsp;
+        <input type="radio" name="Choose1" value="Choose1" checked>Choose1<br>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="radio" name="Choose2" value="Choose2"> Choose2<br>  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="radio" name="Choose3" value="Choose3"> Choose3  <br><br>
+        <label>Incement No:</label> &nbsp;&nbsp; &nbsp; &nbsp;
+        <input type="number" min="10" max="100">
+       
+    
+        <br><br>
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        <input align="center" type="checkbox" name="vehicle" value="Bike"> Agree With Terms and condition <br>
+        </form>
+        <br><br> 
+        <p align=center>
+        <button type="button" onclick="">Register</button>
+        <button type="button" onclick="">Save Draft</button>
+        </p>
+
+    </body>
+</html>
+<style> 
+    .textAlign{
+        vertical-align:top;
+    }
+    .searchbar{
+        float: right;
+        margin-top: 60px;
+    }
+    p.signature{
+    display:inline;
+    }
+    img{
+    display:inline;
+    width:15%;
+    }
+    </style>
