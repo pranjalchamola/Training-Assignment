@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>
+    </title>
+</head>
+<body>
+        <div class="clock-container">
+         </div>
+    <h2>Time &nbsp; <div id="time_span"></div></h2>
+    <h2 class="date">Date &nbsp; <div id="date"></div></h2>
+    <h2 class="date">Day: &nbsp; <div id="days"></div></h2>
+    
+                
+</body>
+<script>
+    timer();
+
+function timer(){
+ var currentTime = new Date()
+var hours = currentTime.getHours()
+var minutes = currentTime.getMinutes()
+var sec = currentTime.getSeconds()
+
+var t_str = hours + ":" + minutes + ":" + sec + " ";
+if(hours > 11){
+    t_str += "PM";
+} else {
+   t_str += "AM";
+}
+ document.getElementById('time_span').innerHTML = t_str;
+ setTimeout(timer,1000);
+}
+datee()
+function datee()
+{
+    var d = new Date();
+var day = d.getDate();
+var month = d.getMonth()+1;
+
+if(day < 10){
+    day = "0"+d.getDate();
+}
+
+if(month < 10){
+    month = "0"+eval(d.getMonth()+1);
+}
+
+var date = day+"."+month+"."+d.getFullYear();
+document.getElementById('date').innerHTML = date;
+}
+
+today()
+function today() {
+  var d = new Date();
+  var n = d.getDay()
+  days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  document.getElementById("days").innerHTML = days[n];
+}
+</script>
+<style>
+ 
+body {
+  background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);
+  font-family: 'Montserrat', 'sans-serif';
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.date{
+ margin-left: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+</style>
