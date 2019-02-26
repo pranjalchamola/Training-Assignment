@@ -1,0 +1,106 @@
+<!-- Make a dynamic table with the following columns:
+
+firstName, lastName, email, id, phoneNumber, designation, DOB.
+
+Data should be in the form of Array of Objects with the above mentioned fields.
+
+The whole table is to be created dynamically, including <table><th><tr><td>
+
+Render this Table in HTML using javascript and apply sorting to it.By default it should be in ascending order (according to Id) . Clicking on any column should sort the whole table according to whether it was in ascending order or descending order.
+-->
+<!doctype html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+
+<body>
+    <table style="width:100%" id="tab">
+        <th><button onclick="sortTable()">
+        First Name </button>
+        </th>
+        <th><button onclick="dynamicSort()">
+        Last Name</button>
+        </th>
+        <th><button onclick="dynamicSort()">
+        Email</button>
+        </th>
+        <th><button onclick="dynamicSort()">
+        Id</button>
+        </th>
+        <th><button onclick="dynamicSort()">
+        Phone Number</button>
+        </th>
+        <th><button onclick="dynamicSort()">
+        Designation</button>
+        </th>
+        <th><button onclick="dynamicSort()">
+        Phone Number</button>
+        </th>
+        <tr></tr>
+    </table>
+
+<div><button onclick="dynam()"> Click Me </button></div>
+</body>
+</html>
+<script>
+    var i=0;
+    var arr=[{'Fname': 'Abc','Lname': 'bc','Email': 'c','ID': 'Abcd','Phone': 'Abce','Desig': 'Abcf','DOB': 'Abcg' },
+    {'Fname': 'Abcg','Lname': 'bcgb','Email': 'cga','ID': 'Abcdgm','Phone': 'Abcey','Desig': 'Abcz','DOB': 'Abcgg' },
+    {'Fname': 'Abch','Lname': 'bcgn','Email': 'cgb','ID': 'Abcdgn','Phone': 'Abcet','Desig': 'Abcfy','DOB': 'Abcgg' },
+    {'Fname': 'Abck','Lname': 'bcgm','Email': 'cgd','ID': 'Abcdgl','Phone': 'Abcee','Desig': 'Abcfx','DOB': 'Abcgg' },
+    {'Fname': 'Abcl','Lname': 'bcgl','Email': 'cgg','ID': 'Abcdgk','Phone': 'Abcer','Desig': 'Abcfw','DOB': 'Abcgg' },
+    {'Fname': 'Abcm','Lname': 'bcgk','Email': 'cgh','ID': 'Abcdgj','Phone': 'Abceg','Desig': 'Abcfv','DOB': 'Abcgg' },
+    {'Fname': 'Abcn','Lname': 'bcgj','Email': 'cgj','ID': 'Abcdgh','Phone': 'Abcef','Desig': 'Abcfu','DOB': 'Abcgg' },
+    {'Fname': 'Abco','Lname': 'bcgh','Email': 'cgk','ID': 'Abcdgg','Phone': 'Abced','Desig': 'Abcft','DOB': 'Abcgg' }]
+function dynam(){
+    
+    { 
+    if(i<arr.length)
+    {
+    var table=document.getElementById("tab");
+    var row=table.insertRow(1);
+    var col1=row.insertCell(0);
+    var cellname1=document.createTextNode(arr[i].Fname);
+    var col2=row.insertCell(1);
+    var cellname2=document.createTextNode(arr[i].Lname);
+    var col3=row.insertCell(2);
+    var cellname3=document.createTextNode(arr[i].Email);
+    var col4=row.insertCell(3);
+    var cellname4=document.createTextNode(arr[i].ID);
+    var col5=row.insertCell(4);
+    var cellname5=document.createTextNode(arr[i].Phone);
+    var col6=row.insertCell(5);
+    var cellname6=document.createTextNode(arr[i].Desig);
+    var col7=row.insertCell(6);
+    var cellname7=document.createTextNode(arr[i].DOB);
+    col1.appendChild(cellname1);
+    col2.appendChild(cellname2);
+    col3.appendChild(cellname3);
+    col4.appendChild(cellname4);
+    col5.appendChild(cellname5);
+    col6.appendChild(cellname6);
+    col7.appendChild(cellname7);
+    i++;
+    }
+    }
+    
+}
+
+
+
+
+</script>
+<style>
+table,th,td{
+    border: 2px solid black;
+    border-collapse:collapse;
+
+}
+button{
+    width: 100%;
+    align-content: center;
+}
+</style>
