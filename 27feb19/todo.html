@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-Do List</title>
+       
+    </head>
+    <body>
+        <div class="modif">
+            <p>Please Input To Do List</p>
+        </div>
+        <form>
+            <input type="date" id="date"></input>
+            <input type="text" placeholder="Description" id="desc" ></input>
+            <button type="button" onclick="createlist()">Add</button>
+        </form>
+        
+    </body>
+</html>
+<script>    
+ var arr = [];
+ var index=0;
+    var table = document.createElement('table');
+
+    table.setAttribute('id','dele')
+    table.style.border = "1px solid black";
+    var th1 = document.createElement('th');
+    var th2 = document.createElement('th');
+    
+    var th1_heading = document.createTextNode('date');
+    var th2_heading = document.createTextNode('description');
+
+    th1.append(th1_heading);
+    th2.append(th2_heading);
+    table.appendChild(th1);
+    table.appendChild(th2);
+    function createlist()
+    {   
+        var btn = document.createElement("BUTTON");
+        btn.setAttribute('onclick','remove()');
+        index++;
+        var date = document.getElementById("date").value;
+        var desc = document.getElementById("desc").value;
+
+        arr.push({'date':date,'desc':desc});
+
+
+        var tr = document.createElement('tr');
+        var date = document.createElement("TD");
+        var getdate = document.getElementById("date").value;
+        date.append(getdate);
+
+        var desc = document.createElement("TD");
+        var getdesc = document.getElementById("desc").value;
+        desc.append(getdesc);
+        
+
+        tr.appendChild(date);
+        tr.appendChild(desc);
+        tr.appendChild(btn);
+        table.appendChild(tr);
+        document.body.appendChild(table);
+        date.style.border = "1px solid black";
+        desc.style.border = "1px solid black";
+
+  var t = document.createTextNode("Delete");
+  btn.appendChild(t);
+
+  function remov()
+  {
+    var x = document.getElementById("dele");
+    x.deleteRow(index);
+  }
+
+    }
+
+</script>
+
+
+<style>
+    table, td, th 
+    {
+    border: 1px solid black;
+    margin-top: 50px;
+    width: 80%;
+    }   
+    
+    .modif
+    {
+        align-content: center;
+        margin-left: 350px;
+    }
+    form
+    {
+        align-content: center;
+        margin-left: 300px;
+    }
+</style>
