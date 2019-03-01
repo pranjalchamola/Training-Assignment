@@ -1,0 +1,85 @@
+
+body { 
+  margin: 0;
+  background-image: url("giphy.gif");
+ background-size: cover;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgb(216, 140, 140);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color:blue;
+    display: block;
+    transition: 0.3s;
+  }
+  
+    p.solid {
+      border-style: solid;
+      padding-right: 5%;
+      padding-left:5%;
+      padding-top:5%;
+      padding-bottom: 5%;
+
+    }
+    .col-md-4{
+        height: 180%;
+        width: 100%;
+        
+
+    }
+
+     .checkbox{
+    
+        background-clip: border-box;
+        border: 1px solid black;
+        padding-left: 10%;
+        padding-right: 10%;
+     }
+
+  .sidenav a:hover {
+    color: yellow;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .logo{
+    padding-left: 10%;
+   }  
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+
+    
