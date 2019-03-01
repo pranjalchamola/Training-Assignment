@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Booking Div
+        </title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      </head>
+      <script type="text/javascript" src="jsonfile.js"></script>
+     
+    <body>
+        <div id="parentDiv"><!--parent div-->
+            <div> <!--Json for clinic name and address-->
+                <h1 id="demo1"></h1>
+
+                
+                <p id="demo2">
+                        No.1805, Sector-21, Palam Gurugram Road, Dundahera VillageGurgaon, Haryana
+                </p>
+                <hr>
+                <p id="demo3">
+                </p>
+            </div>
+
+            <div class="week">
+            <p style="display: inline;">
+                Avaialablity
+             <span id="weekspan"style="color: red; border-color: red">SUN</span>
+             <span id="weekspan">MON</span>
+             <span id="weekspan">TUE</span>
+             <span id="weekspan">WED</span>
+             <span id="weekspan">THR</span>
+             <span id="weekspan">FRI</span>
+             <span id="weekspan">SAT</span>
+            </p>
+            <!--<div id="rectangle"></div>-->
+
+            </div>
+            <br> <br>
+
+            <div>
+                <a  href="#" onClick="document.getElementById('hideTime').style.display='block';document.getElementById('hideapp').style.display='none'">Time</a>
+                &nbsp; <b>|</b> &nbsp;
+                <a href="#" onClick="document.getElementById('hideTime').style.display='none';document.getElementById('hideapp').style.display='block'">Amenities</a>
+            </div>
+            <br>
+
+            <div id="hideTime" style="display: block">
+
+            <div>                 
+                    <span  class="glyphicon glyphicon-calendar"></span>
+                    <span id="datespan"><input type="date" value="2013-12-28" id="datepicker"></span>
+                    <span id="littleLeft" class="glyphicon glyphicon-chevron-down"></span>
+            </div>
+            <br>
+            <div>
+                 <span onclick="weatherfun1()" id="weatherspan1"><img onclick="weatherfun1()" height="16px" id="imageFade1" src="morning.png"><a onclick="weatherfun1()" id="dayt1">&nbsp;&nbsp;MORNING</a>
+                 </span>
+                 <span onclick="weatherfun2()" id="weatherspan2"><img onclick="weatherfun2()" height="16px" id="imageFade2" src="afternoon.png"><a onclick="weatherfun2()" id="dayt2">&nbsp;&nbsp;AFTERNOON</a>
+                 </span>
+                 <span onclick="weatherfun3()" id="weatherspan3"><img onclick="weatherfun3()" height="16px" id="imageFade3" src="evening.png" ><a onclick="weatherfun3()" id="dayt3">&nbsp;&nbsp;EVENING</a></span>
+                 <span onclick="weatherfun4()" id="weatherspan4"><img onclick="weatherfun4()" height="16px" id="imageFade4" src="night.png" ><a onclick="weatherfun4()" id="dayt4">&nbsp;&nbsp;NIGHT</a>
+                 </span>
+            </div>
+            <br>
+            <div id="appointDiv">
+            </div>
+        </div>
+
+        <div id="hideapp" style="display: none">
+            <ul>
+                <li>
+                    Car Parking
+                </li>
+                <li>
+                    Bike Parking
+                </li>
+            </ul>
+
+
+        </div>
+  
+
+
+            <div id="Amount">
+                <span>TOTAL AMOUNT </span>
+                <span><b>:</b></span>
+                <span>&#x20b9;</span>
+                <span id="Amount">900</span>
+                <span ><input type="button" id="confrmbtn" value="CONFIRM APPOINTMENT"></span>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+<script> 
+   var x;
+   var y;
+                var index=0;
+                x = docGG.doctorListing[index].docName;
+                document.getElementById("demo1").innerHTML = x;
+                x = docGG.doctorListing[index].address[index].addressLineTwo+','+docGG.doctorListing[index].address[index].city+','+ docGG.doctorListing[index].address[index].state;
+                document.getElementById("demo2").innerHTML = x;
+                x = docGG.doctorListing[index].address[index].addressLineOne;
+                document.getElementById("demo3").innerHTML = x;
+
+
+var flag=0;
+    function weatherfun1()
+    {
+          document.getElementById("dayt1").style.color="black";
+          document.getElementById("imageFade1").style.opacity="1";
+          document.getElementById("weatherspan1").style.color="grey";
+          forceG1()
+          if (flag<1)
+          {
+          var div1 = document.createElement('div');
+          div1.setAttribute('id','index');
+    div1.style.height = "50px";
+    div1.style.width="500px";
+    div1.style.backgroundColor = "grey";
+    appointDiv.appendChild(div1);
+    flag++;
+          }
+
+          function timeHd()
+          {
+              alert("Hello")
+ document.getElementById("hideTime").style.display='none';
+ document.getElementById("hideapp").style.display='block';
+
+          }
+
+    }
+    function weatherfun2()
+    {
+          document.getElementById("dayt2").style.color="black";
+          document.getElementById("imageFade2").style.opacity="1";
+          document.getElementById("weatherspan2").style.color="grey";
+           forceG2()
+           
+    appointDiv.appendChild(div1);
+    document.getElementById(index).style.height='0px';
+
+
+
+    }
+    function weatherfun3()
+    {
+          document.getElementById("dayt3").style.color="black";
+          document.getElementById("imageFade3").style.opacity="1";
+          document.getElementById("weatherspan3").style.color="grey";
+          forceG3()
+          
+    appointDiv.appendChild(div1);
+
+
+    }
+    function weatherfun4()
+    {
+          document.getElementById("dayt4").style.color="black";
+          document.getElementById("imageFade4").style.opacity="1";
+          document.getElementById("weatherspan4").style.color="grey";
+          forceG4()
+    appointDiv.appendChild(div1);
+
+
+    }
+
+    function forceG1()
+    {
+        document.getElementById("dayt2").style.color="grey";
+          document.getElementById("imageFade2").style.opacity="0.6";
+          document.getElementById("weatherspan2").style.color="grey";
+          document.getElementById("dayt3").style.color="grey";
+          document.getElementById("imageFade3").style.opacity="0.6";
+          document.getElementById("weatherspan3").style.color="grey";
+          document.getElementById("dayt4").style.color="grey";
+          document.getElementById("imageFade4").style.opacity="0.6";
+          document.getElementById("weatherspan4").style.color="grey";
+
+    }
+    function forceG2()
+    {
+        document.getElementById("dayt1").style.color="grey";
+          document.getElementById("imageFade1").style.opacity="0.6";
+          document.getElementById("weatherspan1").style.color="grey";
+          document.getElementById("dayt3").style.color="grey";
+          document.getElementById("imageFade3").style.opacity="0.6";
+          document.getElementById("weatherspan3").style.color="grey";
+          document.getElementById("dayt4").style.color="grey";
+          document.getElementById("imageFade4").style.opacity="0.6";
+          document.getElementById("weatherspan4").style.color="grey";
+    }
+    function forceG3()
+    {
+        document.getElementById("dayt2").style.color="grey";
+          document.getElementById("imageFade2").style.opacity="0.6";
+          document.getElementById("weatherspan2").style.color="grey";
+          document.getElementById("dayt1").style.color="grey";
+          document.getElementById("imageFade1").style.opacity="0.6";
+          document.getElementById("weatherspan1").style.color="grey";
+          document.getElementById("dayt4").style.color="grey";
+          document.getElementById("imageFade4").style.opacity="0.6";
+          document.getElementById("weatherspan4").style.color="grey";
+          
+    }
+    function forceG4()
+    {
+        document.getElementById("dayt2").style.color="grey";
+          document.getElementById("imageFade2").style.opacity="0.6";
+          document.getElementById("weatherspan2").style.color="grey";
+          document.getElementById("dayt1").style.color="grey";
+          document.getElementById("imageFade1").style.opacity="0.6";
+          document.getElementById("weatherspan1").style.color="grey";
+          document.getElementById("dayt3").style.color="grey";
+          document.getElementById("imageFade3").style.opacity="0.6";
+          document.getElementById("weatherspan3").style.color="grey";
+    }
+
+     function load() {
+                     var mydata = JSON.parse(doc);
+                     var x;
+                     x= doc.docName[0];
+                     document.getElementById("docL").innerHTML = x;
+                     
+                 }
+
+</script>
+
+<style>
+
+    #imageFade1{
+        opacity: 0.6;
+    }
+    #imageFade2{
+        opacity: 0.6;
+    }
+    #imageFade3{
+        opacity: 0.6;
+    }
+    #imageFade4{
+        opacity: 0.6;
+    }
+    #parentDiv{
+        margin-left: 30px;
+    }
+    #confrmbtn{
+        border: none;
+        padding: 5px 25px;
+        margin-left: 100px;
+        background-color: rgb(206, 162, 80);
+        
+        color: white;
+    }
+    #confrmbtn:hover{
+        background-color: rgb(184, 135, 46);
+    }
+
+    #Amount{
+        padding-top: 10px;
+    }
+    #weatherspan1{
+        margin: 10px;
+        font-size:10px;
+        color: grey;    
+    }
+    #weatherspan2{
+        margin: 10px;
+        font-size:10px;
+        color: grey;    
+    }
+    #weatherspan3{
+        margin: 10px;
+        font-size:10px;
+        color: grey;    
+    }
+    #weatherspan4{
+        margin: 10px;
+        font-size:10px;
+        color: grey;    
+    }
+    #littleLeft
+    {
+        margin-left: -50px;
+    }
+
+
+    #dayt1
+    {
+        color: grey;
+
+    }
+    #dayt2
+    {
+        color: grey;
+
+    }
+    #dayt3
+    {
+        color: grey;
+
+    }
+    #dayt4
+    {
+        color: grey;
+
+    }
+ 
+    #datespan{
+        color: #000;
+        width: 20px;
+    }
+
+
+    #datepicker{
+        border: none;
+    
+    }
+.week
+{
+    display: inline;
+}
+#rectangle{
+    width:200px;
+    height:100px;
+    background:blue;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:link {color:black;} /* unvisited link */ 
+a:visited {color:rgb(184, 138, 53);} /* visited link */ 
+
+
+        #weekspan
+        {
+            color:red; 
+font-size: 10px;
+font-style: initial;
+background-color: white;
+background-size: 20px 20px;
+background-repeat:no-repeat;
+background-position:2px;
+padding: 3px;
+padding-bottom: 2px;
+padding-top: 2x;
+border-radius: 8px 8px 8px;
+border: .5px solid  rgb(78, 128, 3);
+position:relative;
+align-content: center;
+text-align: center;
+color: rgb(78, 128, 3);
+
+        }
+        </style>
+        
