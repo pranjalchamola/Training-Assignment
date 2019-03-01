@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zoylo:Consult Doctors</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/b800aa751f.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="MYJSON.js"></script>
+    <script src="jss.js"></script>
+    <script src="MYJSONN.js"></script>
+    <script src="pyarajsom.js"></script>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Google Maps Multiple Markers</title>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDePpHFBa3lAFo_sUwz2uBLunQVLwSP274&callback=initMap"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+                $(document).ready(function(){
+                  $(".Book").click(function(){
+                    alert("The paragraph was clicked.");
+                  });
+                });
+                </script>
+
+</head>
+
+<body>
+    <div class="row ">
+
+        <nav class=" navbar-default ">
+            <div class="container-fluid ">
+                <div class="navbar-header">
+                    <img src="header.png" style="float:left;">
+                    <a class="navbar-brand" href="#"><b></b></a>
+                </div>
+
+
+                <ul class="nav navbar-nav">
+                        &nbsp;&nbsp;&nbsp;<li class="glyphicon glyphicon-th" style="font-size:40px;"> </li> &nbsp;&nbsp;&nbsp;
+                    <li class="search"><input type="text" class="form-control" id="email"
+                            placeholder="Enter Customer Name"></li>
+                    <li><a href="#"><i class="fa fa-search" style="font-size:20px"></i></a></li>
+                </ul>
+                
+            </div>
+
+        </nav>
+    </div>
+    <br>
+    <div class="row middelblock">
+        <div class="col-sm-7 left_scrollbox">
+
+            <div class="card_position" id="container">
+
+            </div>
+        </div>
+        <div class="col-sm-5 ">
+            <div class="right_scrollbox" id="mapBo" style="display: none">
+                <div id="map" style="width: 100%; height: 810px;"></div>
+
+            </div>
+            <div id="parentDiv" style="display: block; width: 100%; height: 600px;">
+                    <!--parent div-->
+                    <div > <!--Json for clinic name and address-->
+                        <h1 id="demo1"></h1>
+                
+                        
+                        <p id="demo2">
+                                No.1805, Sector-21, Palam Gurugram Road, Dundahera VillageGurgaon, Haryana
+                        </p>
+                        <hr>
+                        <p id="demo3">
+                        </p>
+                    </div>
+                
+                    <div class="week">
+                    <p style="display: inline;">
+                        Avaialablity
+                     <span id="weekspan"style="color: red; border-color: red">SUN</span>
+                     <span id="weekspan">MON</span>
+                     <span id="weekspan">TUE</span>
+                     <span id="weekspan">WED</span>
+                     <span id="weekspan">THR</span>
+                     <span id="weekspan">FRI</span>
+                     <span id="weekspan">SAT</span>
+                    </p>
+                    <!--<div id="rectangle"></div>-->
+                
+                    </div>
+                    <br> <br>
+                
+                    <div>
+                        <a  href="#" onClick="document.getElementById('hideTime').style.display='block';document.getElementById('hideapp').style.display='none'">Time</a>
+                        &nbsp; <b>|</b> &nbsp;
+                        <a href="#" onClick="document.getElementById('hideTime').style.display='none';document.getElementById('hideapp').style.display='block'">Amenities</a>
+                    </div>
+                    <br>
+                
+                    <div id="hideTime" style="display: block">
+                
+                    <div>                 
+                            <span  class="glyphicon glyphicon-calendar"></span>
+                            <span id="datespan"><input type="date" value="2013-12-28" id="datepicker"></span>
+                            <span id="littleLeft" class="glyphicon glyphicon-chevron-down"></span>
+                    </div>
+                    <br>
+                    <div>
+                         <span onclick="document.getElementById('fourBox4').style.display='none';document.getElementById('fourBox1').style.display='block';document.getElementById('fourBox2').style.display='none';document.getElementById('fourBox3').style.display='none'" id="weatherspan1"><img onclick="weatherfun1()" height="16px" id="imageFade1" src="morning.png"><a onclick="weatherfun1()" id="dayt1">&nbsp;&nbsp;MORNING</a>
+                         </span>
+                         <span onclick="document.getElementById('fourBox4').style.display='none';document.getElementById('fourBox1').style.display='none';document.getElementById('fourBox2').style.display='block';document.getElementById('fourBox3').style.display='none'" id="weatherspan2"><img onclick="weatherfun2()" height="16px" id="imageFade2" src="afternoon.png"><a onclick="weatherfun2()" id="dayt2">&nbsp;&nbsp;AFTERNOON</a>
+                         </span>
+                         <span onclick="document.getElementById('fourBox4').style.display='none';document.getElementById('fourBox1').style.display='none';document.getElementById('fourBox2').style.display='none';document.getElementById('fourBox3').style.display='block'" id="weatherspan3"><img onclick="weatherfun3()" height="16px" id="imageFade3" src="evening.png" ><a onclick="weatherfun3()" id="dayt3">&nbsp;&nbsp;EVENING</a></span>
+                         <span onclick="document.getElementById('fourBox4').style.display='block';document.getElementById('fourBox1').style.display='none';document.getElementById('fourBox2').style.display='none';document.getElementById('fourBox3').style.display='none'" id="weatherspan4"><img height="16px" id="imageFade4" src="night.png" ><a onclick="weatherfun4()" id="dayt4">&nbsp;&nbsp;NIGHT</a>
+                         </span>
+                    </div>
+                    <br>
+                    <div id="appointDiv">
+                        <div id="fourBox1" style="display: none;color: red">
+                            Hello
+                        </div>
+                        <div id="fourBox2" style="display: none;color: green">
+                hiii
+                        </div>
+                        <div id="fourBox3" style="display: none;color: black">
+                hiiiiiiiiii
+                        </div>
+                        <div id="fourBox4" style="display: none;color: purple">
+                hiiiiiiiiiiii
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div id="hideapp" style="display: none">
+                    <ul>
+                        <li>
+                            Car Parking
+                        </li>
+                        <li>
+                            Bike Parking
+                        </li>
+                    </ul>
+                
+                
+                </div>
+                
+                
+                
+                    <div id="Amount">
+                        <span>TOTAL AMOUNT </span>
+                        <span><b>:</b></span>
+                        <span>&#x20b9;</span>
+                        <span id="Amount">900</span>
+                        <span ><input type="button" id="confrmbtn" value="CONFIRM APPOINTMENT"></span>
+                    </div>
+                </div>
+                
+                </body>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul>
+                    <li><b>Services</b></li>
+                    <br />
+                    <li>Order Medicines</li>
+                    <li>Book Lab Tests & Packages</li>
+                    <li>Consult Doctor Online</li>
+                    <li>Book Doctor Appointments</li>
+                    <li>Get Wellness Packages</li>
+                    <li>Knowledge Base</li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <ul>
+                    <li><b>List your Practice</b></li>
+                    <br />
+                    <li>Doctors</li>
+                    <li>Labs</li>
+                    <li>Hospitals</li>
+                    <li>Home Healthcare</li>
+                    <li>Others</li>
+                </ul>
+            </div>
+
+            <div class="col-sm-3">
+                <ul>
+                    <li><b>Zoylo</b></li>
+                    <br />
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                    <li>Cancellation & Refund Policy</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <ul class="list-unstyled components">
+                    <li><b> Contact Us</b></li>
+                    <br />
+                    <li><a href="#"><i class="fa fa-send" style="font-size:18px;color:skyblue"></i>
+                            Contactus@zoylo.com</a></li>
+                    <li><a href="#"><i class="fa fa-volume-control-phone" style="font-size:18px;color:skyblue"></i> 1800
+                            3000 5454</a></li>
+                    <li>Download App</li>
+            </div>
+        </div>
+        <hr />
+        <div class="row copyright">© 2018 Zoylo Digihealth Pvt. Ltd. All Rights Reserved.</div>
+    </div>
+
+
+    <script type="text/javascript">
+
+
+        var a = []
+
+        for (let i = 0; i < locations.length; i++) {
+
+
+            var b = [];
+            var count = 0;
+            b[count] = (locations[i].doctorID).toString();
+            b[++count] = locations[i].address[0].gpsCoordinates.gpsLatitude;
+            b[++count] = locations[i].address[0].gpsCoordinates.gpsLongitude
+            a.push(b);
+        }
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11,
+            center: new google.maps.LatLng(28.4595, 77.0266),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < a.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(a[i][1], a[i][2]),
+                map: map
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(a[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+    </script>
+
+
+
+</html>
+<script>
+
+
+    $(document).ready(function () {
+        data.doctorListing.forEach(item => {
+            $('#container').append(`<div class="row Card">
+					<div class="col-md-3">
+						<div class="Pic">
+							<img src="image-placeholder.png">
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="row Details">
+							<div class="col-md-6 DetailsColI">
+								<p class="Name">`+ item.docName + `</p>
+								<p class="Qualification">`+ item.qualification + `</p>
+								<p class="Specialisation">`+ item.specialization + ` ( ` + item.experience + ` years )</p>
+							</div>
+							<div class="col-md-6 DetailsColII">
+								<div class="Address">
+									<div><i class="fas fa-map-marker-alt"></i></div>
+									<div>
+										<p>`+ item.address[0].addressLineOne + `</p>
+										<p>`+ item.address[0].addressLineTwo + `</p>
+										<p>`+ item.address[0].city + ` | ` + item.address[0].state + `</p>
+									</div>
+								</div>
+								<p class="Cost"><i class="fas fa-rupee-sign"></i>`+ item.cost + `</p>
+							</div>
+						</div>
+					</div>
+                    <div class="Book">
+                      
+                        <a href="#"> Book </a>
+                    
+					</div>
+				</div>`
+            )
+        })
+
+    });
+</script>
+<script>
+    var x;
+   var y;
+                var index=0;
+                x = docGG.doctorListing[index].docName;
+                document.getElementById("demo1").innerHTML = x;
+                x = docGG.doctorListing[index].address[index].addressLineTwo+','+docGG.doctorListing[index].address[index].city+','+ docGG.doctorListing[index].address[index].state;
+                document.getElementById("demo2").innerHTML = x;
+                x = docGG.doctorListing[index].address[index].addressLineOne;
+                document.getElementById("demo3").innerHTML = x;
+
+
+var flag=0;
+    function weatherfun1()
+    {
+          document.getElementById("dayt1").style.color="black";
+          document.getElementById("imageFade1").style.opacity="1";
+          document.getElementById("weatherspan1").style.color="grey";
+          forceG1()
+          if (flag<1)
+          {
+          var div1 = document.createElement('div');
+          div1.setAttribute('id','index');
+    div1.style.height = "0";
+    div1.style.width="0";
+    div1.style.backgroundColor = "grey";
+    appointDiv.appendChild(div1);
+    flag++;
+          }
+
+          function timeHd()
+          {
+              alert("Hello")
+ document.getElementById("hideTime").style.display='none';
+ document.getElementById("hideapp").style.display='block';
+
+          }
+
+    }
+    function weatherfun2()
+    {
+          document.getElementById("dayt2").style.color="black";
+          document.getElementById("imageFade2").style.opacity="1";
+          document.getElementById("weatherspan2").style.color="grey";
+           forceG2()
+           
+    appointDiv.appendChild(div1);
+    document.getElementById(index).style.height='0px';
+
+
+
+    }
+    function weatherfun3()
+    {
+          document.getElementById("dayt3").style.color="black";
+          document.getElementById("imageFade3").style.opacity="1";
+          document.getElementById("weatherspan3").style.color="grey";
+          forceG3()
+          
+    appointDiv.appendChild(div1);
+
+
+    }
+    function weatherfun4()
+    {
+          document.getElementById("dayt4").style.color="black";
+          document.getElementById("imageFade4").style.opacity="1";
+          document.getElementById("weatherspan4").style.color="grey";
+          forceG4()
+    appointDiv.appendChild(div1);
+
+
+    }
+
+    function forceG1()
+    {
+        document.getElementById("dayt2").style.color="grey";
+          document.getElementById("imageFade2").style.opacity="0.6";
+          document.getElementById("weatherspan2").style.color="grey";
+          document.getElementById("dayt3").style.color="grey";
+          document.getElementById("imageFade3").style.opacity="0.6";
+          document.getElementById("weatherspan3").style.color="grey";
+          document.getElementById("dayt4").style.color="grey";
+          document.getElementById("imageFade4").style.opacity="0.6";
+          document.getElementById("weatherspan4").style.color="grey";
+
+    }
+    function forceG2()
+    {
+        document.getElementById("dayt1").style.color="grey";
+          document.getElementById("imageFade1").style.opacity="0.6";
+          document.getElementById("weatherspan1").style.color="grey";
+          document.getElementById("dayt3").style.color="grey";
+          document.getElementById("imageFade3").style.opacity="0.6";
+          document.getElementById("weatherspan3").style.color="grey";
+          document.getElementById("dayt4").style.color="grey";
+          document.getElementById("imageFade4").style.opacity="0.6";
+          document.getElementById("weatherspan4").style.color="grey";
+    }
+    function forceG3()
+    {
+        document.getElementById("dayt2").style.color="grey";
+          document.getElementById("imageFade2").style.opacity="0.6";
+          document.getElementById("weatherspan2").style.color="grey";
+          document.getElementById("dayt1").style.color="grey";
+          document.getElementById("imageFade1").style.opacity="0.6";
+          document.getElementById("weatherspan1").style.color="grey";
+          document.getElementById("dayt4").style.color="grey";
+          document.getElementById("imageFade4").style.opacity="0.6";
+          document.getElementById("weatherspan4").style.color="grey";
+          
+    }
+    function forceG4()
+    {
+        document.getElementById("dayt2").style.color="grey";
+          document.getElementById("imageFade2").style.opacity="0.6";
+          document.getElementById("weatherspan2").style.color="grey";
+          document.getElementById("dayt1").style.color="grey";
+          document.getElementById("imageFade1").style.opacity="0.6";
+          document.getElementById("weatherspan1").style.color="grey";
+          document.getElementById("dayt3").style.color="grey";
+          document.getElementById("imageFade3").style.opacity="0.6";
+          document.getElementById("weatherspan3").style.color="grey";
+    }
+
+     function load() {
+                     var mydata = JSON.parse(doc);
+                     var x;
+                     x= doc.docName[0];
+                     document.getElementById("docL").innerHTML = x;
+                     
+                 }
+
+function rangeToMinutes(range) {
+var slotes;
+var minutes = 0;
+var start = range[0];
+var end = range[1];
+var startParts = start.split(':');
+var endParts = end.split(':');
+var startHour = +startParts[0];
+var endHour = +endParts[0];
+var startMins = +startParts[1];
+var endMins = +endParts[1];
+if (startHour !== endHour) {
+
+  var hrMins = (endHour - startHour) * 60;
+
+  minutes += hrMins;
+
+}
+if (startMins !== endMins) {
+  minutes += (endMins - startMins)
+}
+slotes=minutes/15;
+return slotes;
+
+}
+</script>

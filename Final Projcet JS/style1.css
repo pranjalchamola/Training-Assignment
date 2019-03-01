@@ -1,0 +1,83 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+.card_position{
+    padding-left: 50px;
+}
+.Card{
+    position: relative;
+    width:100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid  rgba(0,0,0,0.2);
+}
+.Card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.Card:hover .Book{
+    display: block;
+}
+.Pic{
+    width: 100%;
+    padding: 10px;
+}
+.Pic img{
+    width:55%;
+}
+.Details{
+    padding-top: 20px;
+}
+.DetailsColI{
+    border-right: 1px solid rgba(0,0,0,0.2)
+}
+.Name{
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: 0px;
+    padding: 0px;
+}
+.Qualification{
+    margin: 0px;
+    padding: 0px;
+    transform: translateY(-4px)
+}
+.Specialisation{
+    margin: 0px;
+    padding: 0px;
+}
+.Address{
+    display: flex
+       
+}
+.Address p{
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.8em
+}   
+.Cost{
+    margin-top: 10px;
+}
+.DetailsColII i{
+    padding-right: 5px;
+}
+.Book {
+    position: absolute;
+    display: none;
+    right: 30px;
+    bottom: 20px;
+    background-color: rgb(255, 163, 43);
+    padding: 5px 10px;
+
+}
+.Book:hover {
+    position: absolute;
+    display: none;
+    right: 30px;
+    bottom: 20px;
+    background-color: rgba(255, 163, 43, 0.767);
+    padding: 5px 10px;
+}
+.Book a{
+    color: white;
+    text-decoration: none;
+}
