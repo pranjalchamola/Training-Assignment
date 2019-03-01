@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Google Map</title>
+    <script src="MYJSON.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmO6mL8lwmo0oFzeZ9U0uJldfAIvvSHO0&callback=initMap"
+        type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="map" style="width: 100%; height: 700px;"></div>
+    <script type="text/javascript">
+  
+
+ var a=[]
+
+for(let i=0;i<locations.length;i++)
+{
+ 
+ 
+ var b = [];
+ var count=0;
+ b[count]= (locations[i].doctorID).toString();
+ b[++count]=locations[i].address[0].gpsCoordinates.gpsLatitude;
+ b[++count] =locations[i].address[0].gpsCoordinates.gpsLongitude
+ a.push(b);
+ }
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: new google.maps.LatLng(28.5088, 77.0923),
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < a.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(a[i][1], a[i][2]),
+                map: map
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(a[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+    </script>
+</body>
+
+</html>
