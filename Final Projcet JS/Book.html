@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Booking Div
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery UI Datepicker - Default functionality</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+
+    <body>
+        <div><!--parent div-->
+            <div> <!--Json for clinic name and address-->
+                <h1>
+                    Park Multispeciality Hospital
+                </h1>
+                <p>
+                        No.1805, Sector-21, Palam Gurugram Road, Dundahera VillageGurgaon, Haryana
+                </p>
+                <hr>
+                <p>
+                        Park Multispeciality Hospital
+                </p>
+            </div>
+
+            <div class="week">
+            <p style="display: inline;">
+                Avaialablity
+             <span style="color: red; border-color: red">SUN</span>
+             <span>MON</span>
+             <span>TUE</span>
+             <span>WED</span>
+             <span>THR</span>
+             <span>FRI</span>
+             <span>SAT</span>
+            </p>
+            <!--<div id="rectangle"></div>-->
+
+            </div>
+            <br> <br>
+
+            <div>
+                <a href="#">Time</a>
+                &nbsp; <b>|</b> &nbsp;
+                <a href="#">Amenities</a>
+            </div>
+            <br>
+
+            <div>
+            <p>Date: <input type="text" id="datepicker"></p>
+
+            </div>
+            
+
+
+        </div>
+
+    </body>
+</html>
+
+
+
+<script>
+        $( function() {
+          $( "#datepicker" ).datepicker();
+        } );
+
+
+</script>
+
+
+<style>
+.week
+{
+    display: inline;
+}
+#rectangle{
+    width:200px;
+    height:100px;
+    background:blue;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:link {color:black;} /* unvisited link */ 
+a:visited {color:rgb(184, 138, 53);} /* visited link */ 
+
+
+        span
+        {
+            color:red; 
+font-size: 10px;
+font-style: initial;
+background-color: white;
+background-size: 20px 20px;
+background-repeat:no-repeat;
+background-position:2px;
+padding: 3px;
+padding-bottom: 2px;
+padding-top: 2x;
+border-radius: 8px 8px 8px;
+border: .5px solid  rgb(78, 128, 3);
+position:relative;
+align-content: center;
+text-align: center;
+color: rgb(78, 128, 3);
+
+        }
+</style>
