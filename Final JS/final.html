@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="finalstyle.css"> 
+  <script src="dataDoc.js"></script>
+  <script src="rightB.js"></script>
+  <script src="pyarajson.js"></script>
+  <title>Final</title>   
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="row">
+      <img class="logo" src="logo.png" alt="logo">
+      <span class="menu-button"><i style="font-size:22px;" class="fa fa-bars"></i></span>
+      <input class="search-bar" type="search" placeholder="Search.." name="search">
+      <button class="search-button"><i class="fa fa-search"></i></button>
+      <div class="header-right">
+        <a class="active" href="#home">Login/Sign Up</a>
+      </div>
+    </div>
+  </div>
+  <div class="row middelblock">
+    <div class="col-sm-7 left_scrollbox">
+
+      <div class="card_position" id="container">
+
+      </div>
+    </div>
+    <script type="text/javascript">
+    
+        //Array of JSON objects.
+        var markers = [
+        {
+            "title":  "Khetrapal Nursing Home",
+            "lat": "28.7",
+            "lng": "77.8",
+            "description": 'Gn 5, F N g Sector Rajouri Garden'
+        },
+        {
+            "title": "Lifecare Nursing Home",
+            "lat": "28.5732921",
+            "lng": "76.9771919",
+            "description": "Dwarka"
+        },
+        {
+            "title": "DermaClinix-The complete Skin and Hair Solution Center",
+            "lat": "28.566763",
+            "lng": "77.2270273",
+            "description": "E-13, Basement, Defence Colony, Near Andrews Ganj Bus Stop, Block E, Defence Colony"
+        },
+        {
+            "title": "Child Health Care Center",
+            "lat": "28.5499813",
+            "lng": "77.1720887",
+            "description": "C-23, Kharera, Hauz Khas"
+        },
+        {
+            "title": "Orthopaedic Clinic",
+            "lat": " 28.5702367",
+            "lng": "77.1597194",
+            "description": "C1 Ln, Block C, Vasant Vihar"
+        },
+        {
+            "title": "Center for Dental Education and Research, AIIMS Campus, Ansari Nagar East, Block D2, Ansari Nagar Eas",
+            "lat": " 28.5657211",
+            "lng": "77.2108789",
+            "description": "Dental OPD, AIIMS"
+        },
+        {
+            "title": "AB-4, 2nd Floor, Shalimar Bagh, AA Block, Poorbi Shalimar Bag, Shalimar Bagh",
+            "lat": "  28.70707",
+            "lng": "77.1663503",
+            "description": "Surgeine Healthcare"
+        },
+        {
+            "title": "Indian Spinal Injuries Centre, Sector C Vasant Kunj, Opposite vasant Valley School, Delhi, IAA Colony, Sector D, Vasant Kunj, New Delhi, Delhi 110070",
+            "lat": "28.4531632 ",
+            "lng": "77.0704706",
+            "description": "Dr Rajat Mahajan- Best Spine Surgeon in Delhi, Spine Specialist,Scoliosis Doctor,Neck Pain Treatment"
+        },
+        {
+            "title": "Khasra no 840, janki max lane, Mandi Rd, Dera Village, Mandi, New Delhi, Delhi 110047",
+            "lat": "28.4531632 ",
+            "lng": "77.0704706",
+            "description": "Janki Max Hospital"
+        },
+    
+        ];
+        window.onload = function () {
+            LoadMap();
+        }
+        function LoadMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                zoom: 8,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var latlngbounds = new google.maps.LatLngBounds();
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+     
+            for (var i = 0; i < markers.length; i++) {
+                var data = markers[i]
+                var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: data.title
+                });
+                (function (marker, data) {
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        infoWindow.setContent("<div style = 'width:200px;min-height:100px'>" + data.description + "</div>");
+                        infoWindow.open(map, marker);
+                    });
+                })(marker, data);
+                latlngbounds.extend(marker.position);
+            }
+            var bounds = new google.maps.LatLngBounds();
+            map.setCenter(latlngbounds.getCenter());
+            map.fitBounds(latlngbounds);
+        }
+    </script>
+    <div  class="col-sm-5">
+    <div id="dvMap" style="display: block;width: 560px; height: 550px">
+    </div>
+    <div id="parentDiv" style="display: none"><!--parent div-->
+        <span style="float: right">
+            <a href="#" onclick="document.getElementById('parentDiv').style.display='none';document.getElementById('dvMap').style.display='block'"> <i class="fa fa-close"></i></a>
+        </span>
+        <div> <!--Json for clinic name and address-->
+          <h1 id="demo1"></h1>
+
+          
+          <p id="demo2">
+            
+          </p>
+          <hr>
+          <p id="demo3">
+          </p>
+      </div>
+
+      <div class="week">
+      <p style="display: inline;">
+          Avaialablity
+       <span id="weekspan"style="color: red; border-color: red">SUN</span>
+       <span id="weekspan">MON</span>
+       <span id="weekspan">TUE</span>
+       <span id="weekspan">WED</span>
+       <span id="weekspan">THR</span>
+       <span id="weekspan">FRI</span>
+       <span id="weekspan">SAT</span>
+      </p>
+      <!--<div id="rectangle"></div>-->
+
+      </div>
+      <br> <br>
+
+      <div>
+          <a  href="#" onClick="document.getElementById('hideTime').style.display='block';document.getElementById('hideapp').style.display='none'">Time</a>
+          &nbsp; <b>|</b> &nbsp;
+          <a href="#" onClick="document.getElementById('hideTime').style.display='none';document.getElementById('hideapp').style.display='block'">Amenities</a>
+      </div>
+      <br>
+
+      <div id="hideTime" style="display: block">
+
+      <div>                 
+              <span  class="glyphicon glyphicon-calendar"></span>
+              <span id="datespan"><input type="date" value="2013-12-28" id="datepicker"></span>
+              <span id="littleLeft" class="glyphicon glyphicon-chevron-down"></span>
+      </div>
+      <br>
+      <div>
+           <span onclick="document.getElementById('fourBox4').style.display='none';document.getElementById('fourBox1').style.display='block';document.getElementById('fourBox2').style.display='none';document.getElementById('fourBox3').style.display='none'" id="weatherspan1"><img onclick="weatherfun1()" height="16px" id="imageFade1" src="morning.png"><a onclick="weatherfun1()" id="dayt1">&nbsp;&nbsp;MORNING</a>
+           </span>
+           <span onclick="document.getElementById('fourBox4').style.display='none';document.getElementById('fourBox1').style.display='none';document.getElementById('fourBox2').style.display='block';document.getElementById('fourBox3').style.display='none'" id="weatherspan2"><img onclick="weatherfun2()" height="16px" id="imageFade2" src="afternoon.png"><a onclick="weatherfun2()" id="dayt2">&nbsp;&nbsp;AFTERNOON</a>
+           </span>
+           <span onclick="document.getElementById('fourBox4').style.display='none';document.getElementById('fourBox1').style.display='none';document.getElementById('fourBox2').style.display='none';document.getElementById('fourBox3').style.display='block'" id="weatherspan3"><img onclick="weatherfun3()" height="16px" id="imageFade3" src="evening.png" ><a onclick="weatherfun3()" id="dayt3">&nbsp;&nbsp;EVENING</a></span>
+           <span onclick="document.getElementById('fourBox4').style.display='block';document.getElementById('fourBox1').style.display='none';document.getElementById('fourBox2').style.display='none';document.getElementById('fourBox3').style.display='none'" id="weatherspan4"><img height="16px" id="imageFade4" src="night.png" ><a onclick="weatherfun4()" id="dayt4">&nbsp;&nbsp;NIGHT</a>
+           </span>
+      </div>
+      <br>
+      <div id="appointDiv">
+          <div id="fourBox1" style="display: none;color: red">
+              Hello
+          </div>
+          <div id="fourBox2" style="display: none;color: green">
+hiii
+          </div>
+          <div id="fourBox3" style="display: none;color: black">
+hiiiiiiiiii
+          </div>
+          <div id="fourBox4" style="display: none;color: purple">
+hiiiiiiiiiiii
+          </div>
+
+      </div>
+  </div>
+
+  <div id="hideapp" style="display: none">
+      <ul>
+          <li>
+              Car Parking
+          </li>
+          <li>
+              Bike Parking
+          </li>
+      </ul>
+
+
+  </div>
+
+
+
+      <div id="Amount">
+          <span>TOTAL AMOUNT </span>
+          <span><b>:</b></span>
+          <span>&#x20b9;</span>
+          <span id="Amount">900</span>
+          <span ><input type="button" id="confrmbtn" value="CONFIRM APPOINTMENT"></span>
+      </div>
+  </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+<script>
+ 
+ var indexx=0;
+  $(document).ready(function () {
+      
+    data.doctorListing.forEach(item => {
+        
+      $('#container').append(`<div class="row Card">
+                    <div class="col-md-3">
+                            <div class="Pic">
+              
+                                <img src="fdoc.jpg">
+        
+
+
+              
+            </div>
+					</div>
+					<div class="col-md-9">
+						<div class="row Details">
+							<div class="col-md-6 DetailsColI">
+								<p class="Name">`+ item.docName + `</p>
+								<p class="Qualification">`+ item.qualification + `</p>
+								<p class="Specialisation">`+ item.specialization + ` ( ` + item.experience + ` years )</p>
+							</div>
+							<div class="col-md-6 DetailsColII">
+								<div class="Address">
+									<div><i class="fas fa-map-marker-alt"></i></div>
+									<div>
+										<p>`+ item.address[0].addressLineOne + `</p>
+										<p>`+ item.address[0].addressLineTwo + `</p>
+										<p>`+ item.address[0].city + ` | ` + item.address[0].state + `</p>
+									</div>
+								</div>
+								<p class="Cost"><i class="fas fa-rupee-sign"></i>`+ item.cost + `</p>
+							</div>
+						</div>
+                    </div>
+					<div class="Book" id="index">
+                        <button id="buttonGG">Book</button>
+                        
+					</div>
+                </div>`
+             
+      )
+    })
+});
+
+ 
+  $(document).ready(function(){
+  $("button").click(function(){
+    var x = document.getElementById("dvMap");
+  x.style.display='none';
+  var y=document.getElementById('parentDiv');
+  y.style.display='block';
+  });
+});
+
+var x;
+   var y;
+   var index=0;
+               
+                x = data.doctorListing[index].docName;
+                document.getElementById("demo1").innerHTML = x;
+                x = data.doctorListing[index].address[index].addressLineTwo+','+docGG.doctorListing[index].address[index].city+','+ docGG.doctorListing[index].address[index].state;
+                document.getElementById("demo2").innerHTML = x;
+                x = data.doctorListing[index].address[index].addressLineOne;
+                document.getElementById("demo3").innerHTML = x;
+
+
+var flag=0;
+</script>
+<script>
+  marker.addListener('click', function() {
+          map.setZoom(8);
+          alert('Hi');
+        });
+
+</script>
+
+<style>
+    #buttonGG
+    {
+        color: white;
+        background-color: orange;
+        border: none;
+        padding: 5px;
+
+    }
+    #buttonGG:hover
+    {
+        background-color: rgb(185, 125, 13)
+    }
+</style>
