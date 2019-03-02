@@ -1,0 +1,132 @@
+<html>
+<head>
+       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<script>
+      
+      function myfunction(){
+
+    let main=document.createElement("div")
+
+      // left part containing list of dr.
+            
+            // doctor list 1
+            //left box for list for doctors list
+            let left=document.createElement("div")
+            left.setAttribute("class","col-sm-7")
+            
+                //for card
+                let card=document.createElement("div")
+                card.class="card1"
+            
+                    //for image
+                    let div=document.createElement("div")
+                    div.class="col-sm-3 "
+                        let img=document.createElement("img")
+                        img.class="avatar"
+                        img.src ="dr1.jpg" 
+                        img.alt=""
+                    div.appendChild(img)
+                    card.appendChild(div)    
+                
+                    // input of dr. details
+                    let detail=document.createElement("div")
+                    detail.class="col-sm-6"
+                        //listing details      
+                        let ul=document.createElement("ul")  
+                        ul.style="list-style-type:none;"
+                            let li1=document.createElement("li")
+                            li1.value="Dr.Deepti Arora"
+                            ul.appendChild(li1)
+
+                            let li2=document.createElement("li")
+                            li2.value="BDS"
+                            ul.appendChild(li2)
+
+                            //REVIEWS
+                            let li3=document.createElement("li")
+                                let span1=document.createElement("span") //span1
+                                span1.class="fa fa-star checked"
+                                span1.style="color:orange"
+                                li3.appendChild(span1)
+
+                                let span2=document.createElement("span") //span2
+                                span2.class="fa fa-star checked"
+                                span2.style="color:orange"
+                                li3.appendChild(span2)
+                                
+                                let span3=document.createElement("span") //span3
+                                span3.class="fa fa-star checked"
+                                span3.style="color:orange"
+                                li3.appendChild(span3)
+
+                                let span4=document.createElement("span") //span4
+                                span4.class="fa fa-star checked"
+                                li3.appendChild(span4)
+
+                                span4.style="color:orange"
+                                li3.appendChild(span4)
+
+                                let span5=document.createElement("span") //span5
+                                span5.class="fa fa-star"
+                                li3.appendChild(span5)
+                            ul.appendChild(li3)
+                            
+                            let li4=document.createElement("li")
+                            li4.value= "Dental[8 yrs]"
+                            ul.appendChild(li4)
+
+                    detail.appendChild(ul)
+                card.appendChild(detail)    
+                        
+                   //ADDRESS COLUMN 
+                   let address=document.createElement("div")
+                    address.class="col-sm-3"
+
+                        //for listing of address and other details
+                        let ul1=document.createElement("ul")  
+                        ul1.style="list-style-type:none;"
+                            let li_address=document.createElement("li")
+                            li_address.value="Roshan Nursing Home"
+                            ul1.appendChild(li_address)
+
+                            let li_distance=document.createElement("li")
+                            li_distance.value=" "
+                            ul1.appendChild(li_distance)
+
+                            let li_cost=document.createElement("li")
+                            li_cost.value="Rs 300 "
+                            ul1.appendChild(li_cost)
+                        
+                    address.appendChild(ul1)
+                card.appendChild(address)    
+            left.appendChild(card)
+       
+       main.appendChild(left)
+    
+
+
+        // Right part containing map 
+         
+        let right=document.createElement("div")
+        right.setAttribute("class","col-sm-5")  
+        main.appendChild(right)
+    
+    document.body.appendChild(main)      
+        
+}   
+
+</script>
+<body onload="myfunction()">
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+.navbar-default{
+    color: skyblue;
+    background-color: lightgrey;
+    
+}
+.footer
+{
+    bottom:0;
+    margin-top: 10px;
+    background: #1d2d3d;
+    padding: 50px;
+    color: white;
+    height:300px;
+    width:100%;
+}
+
+li
+{
+list-style-type:none;
+}
+.copyright
+{
+text-align: center;
+
+}
+.search
+{
+    margin-top:6px;
+    width:500px;
+}
+.login {
+    margin-top: 12px;
+    margin-left: 1400px;
+}
+
+.left_scrollbox{
+    height:800px;
+    overflow-y:scroll; 
+}
+
+.right_scrollbox{
+    border: gray;
+    border-style: inset;
+    height:580px;
+    padding-left: 60px;
+}
+.middelblock{
+    width:100%;
+}
+.unavailable{
+    color:red;
+    padding: 4px;
+}
+.available{
+    color:green;
+    padding: 4px;
+}
+.day{
+    width:100;
+}
+.blurtext{
+    color: gray;
+}
+.amount{
+    margin-top: 100px;
+}
+.appoint{
+    margin-left: 100px;
+    width:200px;
+    height:25px;
+    background-color: lightsalmon;
+    color: black;
+}
