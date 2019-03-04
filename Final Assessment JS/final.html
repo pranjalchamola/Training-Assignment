@@ -44,11 +44,13 @@
             "title":  "Khetrapal Nursing Home",
             "lat": "28.7",
             "lng": "77.8",
+            "idMAps":0,
             "description": 'Gn 5, F N g Sector Rajouri Garden'
         },
         {
             "title": "Lifecare Nursing Home",
             "lat": "28.5732921",
+            "idMAps":1,
             "lng": "76.9771919",
             "description": "Dwarka"
         },
@@ -56,11 +58,13 @@
             "title": "DermaClinix-The complete Skin and Hair Solution Center",
             "lat": "28.566763",
             "lng": "77.2270273",
+            "idMAps":2,
             "description": "E-13, Basement, Defence Colony, Near Andrews Ganj Bus Stop, Block E, Defence Colony"
         },
         {
             "title": "Child Health Care Center",
             "lat": "28.5499813",
+            "idMAps":3,
             "lng": "77.1720887",
             "description": "C-23, Kharera, Hauz Khas"
         },
@@ -122,6 +126,11 @@
                         infoWindow.setContent("<div style = 'width:200px;min-height:100px'>" + data.description + "</div>");
                         console.log(data)
                         infoWindow.open(map, marker);
+                        if(data.doctorListing.idMAp==markers.idMAps)
+                        {
+                            document.getElementsByClassName("Card").style.color='Grey';
+                        }
+
                     });
                 })(marker, data);
                 latlngbounds.extend(marker.position);
@@ -185,17 +194,17 @@
       <br>
       <div id="appointDiv">
           <div id="fourBox1" style="display: none;color: red">
-Coming soon!
-          </div>
+            Website under maintainence !
+        </div>
           <div id="fourBox2" style="display: none;color: green">
-Coming soon!
-          </div>
+            Website under maintainence !
+        </div>
           <div id="fourBox3" style="display: none;color: black">
-Coming soon!
-          </div>
+            Website under maintainence !
+        </div>
           <div id="fourBox4" style="display: none;color: purple">
-Coming soon!
-          </div>
+            Website under maintainence !
+        </div>
 
       </div>
   </div>
