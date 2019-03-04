@@ -1,0 +1,511 @@
+body
+{
+  margin: 0;
+}
+
+.header
+{
+  overflow: hidden;
+  background-color: #232176;
+  padding: 10px 5px;
+}
+
+.logo 
+{
+  padding-left: 20px;
+}
+
+.header a.active 
+{
+  float: right;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  color: white;
+}
+
+.header-right
+{
+  padding-left: 100px;
+}
+                 
+.search-bar
+{
+  margin-left: 45px;
+  width: 800px;
+  margin-top: 35px;
+  height: 35px;
+  border: none;
+}
+
+.menu-button
+{
+  margin-left: 40px;
+  margin-top: 35px;
+  color: white;
+  height: 32px;
+  width: 32px;
+}
+
+.search-button
+{
+  margin-left: -4px;
+  margin-top: 35px;
+  border: none;
+  color:rgb(235, 69, 124);
+  background-color: aquamarine;
+  height: 35px;
+}
+   
+.fdoc
+{
+  width: 80px;
+  height: 80px;
+}
+
+.divstyle 
+{
+  border: 1px solid grey;
+  margin-right: 0;
+}
+
+.container
+{
+  float: left;
+  width: 60%;
+}
+
+.middelblock 
+{
+  width: 100%;               
+}
+
+.left_scrollbox 
+{
+  height: 800px;
+  overflow-y: scroll;
+}
+
+.navbar-default 
+{
+  color: skyblue;
+  background-color: lightgrey;
+}
+
+li 
+{
+  list-style-type: none;
+}
+.copyright 
+{
+  text-align: center;
+}
+
+.search 
+{
+  margin-top: 6px;
+  width: 500px;
+}
+
+.login
+{
+  margin-top: 12px;
+  margin-left: 1400px;
+}
+
+.right_scrollbox 
+{
+  border: gray;
+  border-style: inset;
+  height: 580px;
+  padding-left: 60px;
+}
+
+.unavailable
+{
+  color: red;
+  padding: 4px;
+}
+
+.available 
+{
+  color: green;
+  padding: 4px;
+}
+
+.day
+{
+  width: 100;
+}
+
+.blurtext
+{
+  color: gray;
+}
+
+.amount 
+{
+  margin-top: 100px;
+}
+
+.appoint
+{
+  margin-left: 100px;
+  width: 200px;
+  height: 25px;
+  background-color: lightsalmon;
+  color: black;
+}
+
+.card_position
+{
+  padding-left: 50px;
+}     
+    
+.Card 
+{
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(112, 109, 109, 0.2);
+}
+
+.Card:hover 
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Card:hover .Book
+{
+  display: block;
+}
+
+#visa:hover
+{
+  height: 70px;
+  width: 70px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}  
+
+#maestro:hover
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 70px;
+  width: 70px;
+}
+
+.Pic 
+{
+  width: 100%;
+  padding: 30px;
+} 
+
+.Pic img 
+{
+  width: 100%;
+}   
+
+.Details 
+{
+  padding-top: 20px;
+}   
+
+.DetailsColI 
+{
+  border-right: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+.Name 
+{
+  font-weight: 600;
+  font-size: 1.1em;
+  margin: 0px;
+  padding: 0px;
+}   
+
+.Qualification 
+{
+  margin: 0px;
+  padding: 0px;
+  transform: translateY(-4px)
+}
+
+.Specialisation 
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+.Address
+{
+  display: flex
+}
+
+.Address p 
+{
+  margin: 0px;
+  padding: 0px;
+  font-size: 0.8em
+}
+
+.Cost 
+{
+  margin-top: 10px;
+}
+
+.DetailsColII i 
+{
+  padding-right: 5px;
+}
+
+.Book 
+{
+  position: absolute;
+  display: none;
+  right: 30px;
+  bottom: 20px;
+  padding: 5px 10px;
+}
+
+.Book:hover 
+{
+  position: absolute;
+  display: none;
+  right: 30px;
+  bottom: 20px;
+  padding: 5px 10px;
+}
+
+.Book a 
+{
+  color: white;
+  text-decoration: none;
+}
+    
+#fourBox
+{
+  color: grey;
+}
+
+#imageFade1
+{
+  opacity: 0.6;
+}
+
+#imageFade2
+{
+  opacity: 0.6;
+}
+
+#imageFade3
+{
+  opacity: 0.6;
+}
+
+#imageFade4
+{
+  opacity: 0.6;
+}
+
+#parentDiv
+{
+  margin-left: 30px;
+}
+
+#confrmbtn
+{
+  border: none;
+  padding: 5px 5px;
+  margin-left: 100px;
+  background-color: rgb(206, 162, 80);
+  color: white;
+}
+
+#confrmbtn:hover
+{
+  background-color: rgb(184, 135, 46);
+}
+
+#Amount
+{
+  padding-top: 10px;
+}
+
+#weatherspan1
+{
+  margin: 10px;
+  font-size:10px;
+  color: grey;    
+}
+
+#weatherspan2
+{
+  margin: 10px;
+  font-size:10px;
+  color: grey;    
+}
+
+#weatherspan3
+{
+  margin: 10px;
+  font-size:10px;
+  color: grey;    
+}
+
+#weatherspan4
+{
+  margin: 10px;
+  font-size:10px;
+  color: grey;    
+}
+
+#littleLeft
+{
+   margin-left: -10px;
+}
+
+#dayt1
+{
+  color: grey;
+}
+
+#dayt2
+{
+  color: grey;
+}
+
+#dayt3
+{
+  color: grey;
+}
+
+#dayt4
+{
+  color: grey;
+}
+
+#datespan
+{
+  color: #000;
+  width: 20px;
+}
+
+#datepicker
+{
+  border: none;
+
+}
+.week
+{
+  display: inline;
+}
+
+#rectangle
+{
+  width:200px;
+  height:100px;
+  background:blue;
+}
+
+a 
+{
+  text-decoration: none !important;
+}
+
+a:link {color:black;} /* unvisited link */ 
+a:visited {color:rgb(184, 138, 53);} /* visited link */
+
+#weekspan
+{
+  color:red; 
+  font-size: 10px;
+  font-style: initial;
+  background-color: white;
+  background-size: 20px 20px;
+  background-repeat:no-repeat;
+  background-position:2px;
+  padding: 3px;
+  padding-bottom: 2px;
+  padding-top: 2x;
+  border-radius: 8px 8px 8px;
+  border: .5px solid  rgb(78, 128, 3);
+  position:relative;
+  align-content: center;
+  text-align: center;
+  color: rgb(78, 128, 3);
+}
+
+#footerdiv
+{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgb(34, 39, 68);
+  color: white;
+  text-align: center;
+  display: flex;
+}
+
+#one
+{
+  flex:1;
+  margin-top: 40px
+}
+
+#two
+{
+  flex: 1;
+  margin-top: 40px;
+}
+
+#three
+{
+  flex:1;
+  margin-top: 40px;
+}
+
+#p3
+{
+  margin-top:90%;
+}
+
+#four
+{
+  flex:1;
+  margin-top:10%;
+}
+
+#visa
+{
+  margin-left: 30px;
+}
+
+#contact
+{
+  background-color:rgb(34, 39, 68);
+  float:right;
+}
+
+#foo
+{
+  background-color:rgb(34, 39, 68);
+}
+
+#buttonGG
+{
+  color: white;
+  background-color: orange;
+  border: none;
+  padding: 5px;
+}
+
+#buttonGG:hover
+{
+  background-color: rgb(185, 125, 13)
+}
+    
+      
