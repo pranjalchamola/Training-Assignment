@@ -52,7 +52,7 @@ data = {
         },
         {
             "docName": "Shubham",
-            "doctorID": 100,
+            "doctorID": 110,
             "number":2,
             "specialization": "Cardiologist",
             "qualification": "MD",
@@ -258,13 +258,13 @@ data = {
 
         {
             "docName": "Sumankaur",
-            "doctorID": 104,
+            "doctorID": 978,
             "specialization": "Chiropractic",
             "qualification": "DO",
             "rating": 5,
             "experience": 10,
             "cost": 1000,
-            "gender": "Female",
+            "gender": "female",
             "address": [
                 {
                     "addressLineOne": " House No -98, 3rd Floor, Sadar Bazar",
@@ -658,7 +658,7 @@ data = {
 
         {
             "docName": "priya",
-            "doctorID": 100,
+            "doctorID": 200,
             "specialization": "Diabetologist",
             "qualification": "MD",
             "rating": 5,

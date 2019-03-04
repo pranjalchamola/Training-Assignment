@@ -507,5 +507,11 @@ a:visited {color:rgb(184, 138, 53);} /* visited link */
 {
   background-color: rgb(185, 125, 13)
 }
+
+
+.checked 
+{
+  color: orange;
+}
     
       
