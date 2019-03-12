@@ -1,0 +1,20 @@
+.alert{
+   border: 1px solid red;
+   color: red;  
+}
+
+#head{
+    text-align: center;
+    align-content: center;
+}
+
+#forms{
+    background-color: rgb(176, 214, 230);
+    border: 1px black;
+    align-content: center;
+    justify-content: center;
+    float: center;
+    margin: 0 auto; 
+    width:250px;
+
+}

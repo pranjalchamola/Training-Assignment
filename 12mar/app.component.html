@@ -1,0 +1,35 @@
+<h1 id="head">Validating Form</h1>
+<form id="forms" (ngSubmit) = "onSubmit(f)" #f=ngForm>
+  <div class = "form-group">
+    <label for ="firstName"> FirstName :</label><br>
+    <input required ngModel name="firstName" #firstName = "ngModel"  id = "firstName" type = "text"><br>
+    <div class = "alert" *ngIf = "firstName.touched &&!firstName.valid" >firstname is required.</div>
+  </div>
+  <div class = "form-group">
+    <label for ="lastName"> LastName :</label><br>
+    <input required ngModel name="lastName" #lastName = "ngModel" id = "lastName" type = "text"><br>
+    <div class = "alert" *ngIf = "lastName.touched &&!lastName.valid" >lastname is required.</div>
+  </div>
+  <div class = "form-group">
+    <label for = "email">Email :</label><br>
+    <input required  ngModel name = "email" #email = "ngModel" pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"id = "email" type = "email"><br>
+    <div class = "alert" *ngIf = "email.touched &&!email.valid" >Enter correct email address</div>
+  </div>
+  <div class = "form-group">
+    <label for = "phoneNumber">Phone Number :</label><br>
+    <input required  ngModel name = "phoneNumber" #phoneNumber = "ngModel" pattern = "^[6-9]\d{9}$"id = "phoneNumber" type = "tel"><br>
+    <div class = "alert" *ngIf = "phoneNumber.touched &&!phoneNumber.valid" >Enter correct Phone Number</div>
+  </div>
+  <div class = "form-group">
+    <label for ="City"> city :</label><br>
+    <input required ngModel name="city" #city = "ngModel"  id = "city" type = "text"><br>
+    <div class = "alert" *ngIf = "city.touched &&!city.valid" >city is required.</div>
+  </div>
+  <div class = "form-group">
+    <label for = "code">Zip Code :</label><br>
+    <input required  ngModel name = "code" #code = "ngModel" pattern = "^[1-9]\d{5}$"id = "code" type = "tel"><br>
+    <div class = "alert" *ngIf = "code.touched &&!code.valid" >Enter correct Zip Code, Min length 6</div>
+  </div>
+  <br>
+<button onclick="alert('Thankyou for response')" class = "form-group" type="submit" [disabled]="!f.valid">Submit</button>
+</form>
