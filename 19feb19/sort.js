@@ -603,12 +603,12 @@
       arr=shuffle(arr);
       console.log(arr);
 function shuffle(a) {
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
+    var jvar2, xvar2, inde;
+    for (inde = a.length - 1; inde > 0; inde--) {
+        jvar2 = Math.floor(Math.random() * (inde + 1));
+        xvar2 = a[inde];
+        a[inde] = a[jvar2];
+        a[jvar2] = xvar2;
     }
     return a;}
 function dynamicSort(property) {
