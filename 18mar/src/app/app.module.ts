@@ -3,24 +3,34 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './main/main.component';
-import { HeroComponent } from './hero/hero.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { HeroareaComponent } from './heroarea/heroarea.component';
+import { LeftOptionAreaComponent } from './left-option-area/left-option-area.component';
+import { RightContentAreaComponent } from './right-content-area/right-content-area.component';
+import { CheckOutAreaComponent } from './check-out-area/check-out-area.component';
+import { BodycomponentComponent } from './bodycomponent/bodycomponent.component';
+import { Routes, RouterModule } from '@angular/router';
+import { areIterablesEqual } from '@angular/core/src/change_detection/change_detection_util';
+
+const appRoutes: Routes = [
+  { path: '', component: BodycomponentComponent },
+  { path: 'check-out-area', component: CheckOutAreaComponent }
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent,
     FooterComponent,
-    MainComponent,
-    HeroComponent,
-    CheckoutComponent
+    HeroareaComponent,
+    LeftOptionAreaComponent,
+    RightContentAreaComponent,
+    CheckOutAreaComponent,
+    BodycomponentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
