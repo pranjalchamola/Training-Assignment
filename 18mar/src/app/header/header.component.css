@@ -1,0 +1,51 @@
+.navbar-default
+    {
+        top:60px;
+    }
+        ul li {
+            display: block;
+        }
+        ul li:hover {
+            background:white;
+        }
+        ul li:hover ul {
+            display: block;
+        }
+        ul li ul 
+        {
+            position: relative;
+            width: 100px;
+            display: none;
+        }
+        ul li ul li { 
+            background: white; 
+            display: block; 
+        }
+        ul li ul li a {
+            display:block !important;
+        } 
+        ul li ul li:hover {
+            background: white;
+        }  
+
+        .navbar-fixed-top
+        {
+            font-family: EuclidFlexMed;
+            letter-spacing: 0.12em;
+            text-align: center;
+            font-size: 10.5px;
+            position: sticky;
+        }
+        .navbar-fixed-top a span { 
+            line-height: 30px;
+        }
+        .navbar-fixed-top :hover
+        {
+        text-decoration: none;
+        }
+      
+      special1
+      {
+
+      }
+          
